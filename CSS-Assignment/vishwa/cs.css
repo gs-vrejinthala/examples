@@ -1,0 +1,50 @@
+body
+{
+  height:100%;
+  
+  background-color:grey;
+  padding:30px 125px 25px 125px;
+}
+
+#container
+{
+  width:1000px;
+  height:1500px;
+  background-color:white;
+  padding: 0px 90px 0px 90px;  
+  position:relative;
+  
+}
+.window
+{
+  padding: 30px 5px 25px 60px;
+  display:inline-block;
+  style=height:"560"
+}
+
+img
+{
+  border-style: solid;
+  border-color: #d3d3d3;
+}
+p
+{
+  font-family:calibre;
+}
+
+.window1
+{
+  background-color:white; 
+ /* border-style: solid;
+  border-color: grey; */
+  border-width: 1px; 
+  border-spacing: 10px;
+    box-shadow: 10px 10px 5px #888888;
+	border-radius: 5px;
+	margin-bottom:5px;
+    margin-right:5px;
+  width:300px;
+  height:400px;
+  padding: 10px 10px 25px 10px;
+  float:left;
+}

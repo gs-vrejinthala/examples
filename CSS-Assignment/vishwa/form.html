@@ -1,0 +1,37 @@
+<html>
+   <head>
+     <link rel="stylesheet" href="fcs.css"
+    </head>
+   <body>
+    
+      <form> 
+	     <label>Subject:</label>
+		 <input type="text" name="subject" style="width:330px;""> <br><br>
+		 <label>Customers:</label>
+		 <input type="search"> <br></br>
+		 <label>Interns:</label>
+		 <input list="interns" placeholder="Type to search"> <br></br>
+		    <datalist id="interns">
+                  <option value="Vishwa">
+                  <option value="Tanuja">
+                  <option value="Naresh">
+                  <option value="Nithya">
+                  <option value="Sudha">
+				  <option value="Tejesh">
+            </datalist>
+		<label>Reason:</label>
+		<select> 
+            <option value="value1">Job</option> 
+            <option value="value2" selected>Internship</option>
+            <option>Others</option>
+        </select> <br><br>
+		<label>Date:</label>
+		<input type="date" style="width:120px;"> <br></br>
+		<label>Comments:</label>
+		<input type="text area" style="height:60px;width:330px;"> <br>
+		<button type="button" id="bt" >Save</button>
+		<button type="button" id="bt1" >Cancel</button>
+	  </form>
+	
+   </body>
+</html>
