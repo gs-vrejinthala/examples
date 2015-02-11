@@ -1,0 +1,40 @@
+<html>
+	<head>
+	<style>
+				div {
+					background-color: coral;
+					border: 1px solid;
+					padding: 50px;
+				}
+				</style>
+		
+	</head>
+	<body>
+		<div id="one">
+			<p id="p1">skjfrgvqejnrviuqhre viufbh rughl </p>
+		</div>
+		<div id="two" onclick="c(); return true">
+			<p id="p2" onclick="pc(); return true" >second para</p>
+		</div>
+		<script>
+		/*	document.addEventListener("click", function() {
+                alert("Hello! I am window box!");
+                  },true); */
+			document.getElementById("one").addEventListener("click", function() {
+                alert("Hello! I am an alert box!");
+                  },false);
+		/*	 document.getElementById("two").addEventListener("click", function() {
+                alert("Hello!div two box!");
+                  },true); */
+				  function c()
+				  { alert("hi div two");
+				  }
+			document.getElementById("p1").addEventListener("click", function() {
+                alert("You clicked p1 element!");
+                  });
+			function pc(){
+                alert("You clicked p2 element!");
+                  }
+		</script>
+	</body>
+</html>
