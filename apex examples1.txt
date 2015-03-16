@@ -1,0 +1,37 @@
+global class acntop{
+ 
+     @RemoteAction
+    public static void insertacnt(String data){
+        Map<String, Object> reqObj = (Map<String, Object>) JSON.deserializeUntyped(data);
+       String name = (reqObj.containsKey('name')) ? (String) reqObj.get('name') : null;
+       String phone = (reqObj.containsKey('phone')) ? (String) reqObj.get('phone') : null;
+       String id = (reqObj.containsKey('id')) ? (String) reqObj.get('id') : null;
+       System.debug(id);
+      
+       if(id==null){
+        Account ac=new Account(Name=name,Phone=phone);  
+        insert ac;
+        }
+        else{
+        Account ac=[SELECT Name,Phone from Account where Id=:id];
+        ac.Name=name;
+        ac.Phone=phone;
+        update ac;
+        }
+    }
+    
+      @RemoteAction
+    global static List<Account> getacnt()
+    {
+        List<Account> a =[select id,name,phone,billingcity,owner.Name from Account];
+        return a;
+    
+    }
+    
+      @RemoteAction
+    public static void delacnt(String id){
+        Account ac=[SELECT Name,Phone from Account where Id=:id];
+        delete ac;
+        
+    }
+}

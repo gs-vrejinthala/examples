@@ -1,0 +1,8 @@
+public class hello {
+    public static void sayhi(){
+        System.debug('hi');
+    }
+    public void sayhello(){
+        System.debug('hello');
+    }
+}

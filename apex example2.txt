@@ -1,0 +1,51 @@
+<apex:page controller="viswa" >
+  <!-- Begin Default Content REMOVE THIS -->
+
+  This is visual force page
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   
+  
+  <input type="button" class="b"  value="Button" />
+  <table>
+      <tr>
+          <th>name</th>
+          <th>phone</th>
+          <th>billingcity</th>
+          <th>ownerid</th>
+      </tr>
+  </table>
+  <script>
+      $(".b").on("click",
+      function(){ 
+                  alert("qwerty"); 
+                  Visualforce.remoting.Manager.invokeAction(
+           '{!$RemoteAction.viswa.getacnt}',
+           
+           function(result, event){
+            if (event.status) {
+                   // Get DOM IDs for HTML and Visualforce elements like this
+                  
+                  console.log(JSON.stringify(result));
+                  
+                  for(var i=0;i<result.length;i++)
+                  {
+                     
+                      
+                      console.log(result[i].Name);
+                      console.log(result[i].Id);
+                      console.log(result[i].Phone);
+                      console.log(result[i].Owner.Name);
+                      console.log(result[i].BillingCity);
+                      
+                  }
+               } else if (event.type === 'exception') {
+                  renderErrorFunction(dashboardItem,event.message);
+               } else {
+                renderErrorFunction(dashboardItem,event.message);
+               }
+           }, 
+           {escape: false}
+       );
+                });
+  </script>
+</apex:page>

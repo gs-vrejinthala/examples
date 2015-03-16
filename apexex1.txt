@@ -1,0 +1,15 @@
+Invoice__c inv = [SELECT Id, Name, (SELECT Quantity__c FROM Line_Items__r)
+             FROM Invoice__c
+             WHERE Name='INV-0000'];
+List<Line_Item__c> lis = inv.Line_Items__r;
+System.debug('Number of child line items: ' + lis.size());
+
+Invoice__c inv = new Invoice__c(Status__c='Open');
+// Insert the invoice using DML.
+insert inv;
+  List<Account> a =[select name from Account];
+System.debug(a.size());
+
+Account ac=new Account(Name='asd');
+insert ac;
+System.debug(ac.name);
